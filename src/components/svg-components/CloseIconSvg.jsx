@@ -1,6 +1,6 @@
 import React from "react";
 
-const CloseIconSvg = () => {
+const CloseIconSvg = ({ onClick, ...props }) => {
   return (
     <svg
       width="27"
@@ -8,6 +8,8 @@ const CloseIconSvg = () => {
       viewBox="0 0 27 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      {...props}
     >
       <rect
         x="3.07903"
