@@ -1,7 +1,12 @@
-import Theme from "./theme/Theme";
+import GlobalStyle from "./styleds/GlobalStyle";
+import Theme from "./styleds/Theme";
 
 function App() {
-  return <Theme></Theme>;
+  return (
+    <Theme>
+      <GlobalStyle />
+    </Theme>
+  );
 }
 
 export default App;

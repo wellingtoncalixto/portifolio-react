@@ -44,8 +44,8 @@ const theme = {
     global_space_400: "20rem",
   },
   font_family: {
-    kanit: ["Kanit", "Helvetica", "sans-serif"],
-    jetbrains: ["JetBrains Mono", "sans-serif"],
+    kanit: "Kanit, Helvetica, sans-serif",
+    jetbrains: "JetBrains Mono, sans-serif",
   },
   font_size: {
     display_1: "4rem",
@@ -61,7 +61,7 @@ const theme = {
     label_2: "0.75rem",
     small_label: "0.75rem",
   },
-  line_heigth: {
+  line_height: {
     display_1: "1.06",
     display_2: "1.07",
     heading_1: "1.1",
