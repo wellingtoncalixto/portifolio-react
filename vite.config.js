@@ -6,10 +6,10 @@ import svgr from "vite-plugin-svgr";
 export default defineConfig({
   plugins: [
     react(),
-    eslintPlugin({
-      cache: false,
-      include: ["./src/**/*.js", "./src/**/*.jsx"],
-    }),
+    // eslintPlugin({
+    //   cache: false,
+    //   include: ["./src/**/*.js", "./src/**/*.jsx"],
+    // }),
     svgr(),
   ],
 });

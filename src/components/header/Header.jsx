@@ -1,14 +1,14 @@
 import React from "react";
 import {
+  CloseSvg,
   HeaderComponent,
+  MenuHamburgerSvg,
   MenuItem,
   MenuLink,
   MenuList,
   Navi,
   PortifolioText,
 } from "./styles";
-import MenuHamburgerSvg from "../svg-components/MenuHamburgerSvg";
-import CloseIconSvg from "../svg-components/CloseIconSvg";
 
 const Header = ({ mobileVisibility }) => {
   const [mobileMenuActive, setMobileMenuActive] = React.useState(false);
@@ -18,20 +18,15 @@ const Header = ({ mobileVisibility }) => {
         <PortifolioText className="heading-1">Portifolio</PortifolioText>
         <MenuHamburgerSvg
           onClick={() => setMobileMenuActive(true)}
-          style={{
-            cursor: "pointer",
-            display: mobileVisibility && !mobileMenuActive ? "block" : "none",
-          }}
+          mobileVisibility={mobileVisibility}
+          mobileMenuActive={mobileMenuActive}
         />
         <MenuList $mobileMenuActive={mobileMenuActive}>
           <MenuItem>
-            <CloseIconSvg
+            <CloseSvg
               onClick={() => setMobileMenuActive(false)}
-              style={{
-                cursor: "pointer",
-                display:
-                  mobileVisibility && mobileMenuActive ? "block" : "none",
-              }}
+              mobileVisibility={mobileVisibility}
+              mobileMenuActive={mobileMenuActive}
             />
           </MenuItem>
           <MenuItem>

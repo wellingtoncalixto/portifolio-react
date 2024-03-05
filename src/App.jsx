@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/header/Header";
+import Introducao from "./components/introducao/Introducao";
 import GlobalStyle from "./styleds/GlobalStyle";
 import Theme from "./styleds/Theme";
 
@@ -8,7 +9,7 @@ function App() {
 
   React.useMemo(() => {
     window.addEventListener("resize", isMobileVisibility);
-    isMobileVisibility()
+    isMobileVisibility();
   }, []);
 
   function isMobileVisibility() {
@@ -22,6 +23,7 @@ function App() {
     <Theme>
       <GlobalStyle />
       <Header mobileVisibility={isMobile} />
+      <Introducao />
     </Theme>
   );
 }

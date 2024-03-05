@@ -1,4 +1,20 @@
 import styled, { css } from "styled-components";
+import MenuHamburgerIconSvg from "../../assets/menu-hamburguer-icon.svg?react";
+import CloseIconSvg from "../../assets/close-icon.svg?react";
+
+export const MenuHamburgerSvg = styled(MenuHamburgerIconSvg)`
+  cursor: "pointer";
+  display: ${(props) =>
+    props.mobileVisibility && props.mobileMenuActive === false
+      ? "block"
+      : "none"};
+`;
+
+export const CloseSvg = styled(CloseIconSvg)`
+  cursor: "pointer";
+  display: ${(props) =>
+    props.mobileVisibility && props.mobileMenuActive ? "block" : "none"};
+`;
 
 export const HeaderComponent = styled.header`
   position: absolute;

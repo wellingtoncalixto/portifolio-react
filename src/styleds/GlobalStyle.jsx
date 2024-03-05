@@ -193,30 +193,6 @@ const GlobalStyle = createGlobalStyle`
       background-size: cover;
     };
 
-    .github-icon {
-      background-image: url("../assets/github-logo.svg");
-    };
-
-    .linkedin-icon {
-      background-image: url("../assets/linkedin-logo.svg");
-    };
-
-    .github-icon:hover {
-      background-image: url("../assets/github-logo-hover.svg");
-    };
-
-    .linkedin-icon:hover {
-      background-image: url("../assets/linkedin-logo-hover.svg");
-    };
-
-    .whatsapp-icon {
-      background-image: url("../assets/whatsapp-logo.svg");
-    };
-
-    .whatsapp-icon:hover {
-      background-image: url("../assets/whatsapp-logo-hover.svg");
-    };
-
     //Media global
     @media screen and (min-width: 461px) {
       html {
