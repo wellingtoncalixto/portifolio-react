@@ -1,29 +1,31 @@
 import styled, { css } from "styled-components";
 
-export const Button = styled.a`
-  border-radius: ${(props) => props.theme.space.global_space_12};
-  padding: ${(props) => props.theme.space.global_space_12}
-    ${(props) => props.theme.space.global_space_24};
-  text-decoration: none;
-  font-weight: ${(props) => props.theme.font_weight.bold};
+const buttonStyles = ({ primary, secondary, theme }) => {
+  return css`
+    border-radius: ${theme.space.global_space_12};
+    padding: ${theme.space.global_space_12} ${theme.space.global_space_24};
+    text-decoration: none;
+    font-weight: ${theme.font_weight.bold};
 
-  ${(props) =>
-    props.type === "primary"
-      ? css`
-          border: 2px solid ${props.theme.cores.b8};
-          background-color: ${props.theme.cores.b8};
-          color: ${props.theme.cores.white};
+    border: 2px solid
+      ${(primary && theme.cores.b8) || (secondary && theme.cores.b9)};
+    background-color: ${(primary && theme.cores.b8) ||
+    (secondary && "transparent")};
+    color: ${(primary && theme.cores.white) || (secondary && theme.cores.b9)};
 
-          &:hover {
-            background-image: linear-gradient(
-              ${props.theme.cores.b8},
-              ${props.theme.cores.b6}
-            );
-          }
-        `
-      : css`
-          border: 2px solid ${props.theme.cores.b9};
-          background-color: transparent;
-          color: ${props.theme.cores.b9};
-        `}
+    ${primary &&
+    css`
+      &:hover {
+        background-image: linear-gradient(${theme.cores.b8}, ${theme.cores.b6});
+      }
+    `}
+  `;
+};
+
+export const LinkButton = styled.a`
+  ${(props) => buttonStyles(props)}
+`;
+
+export const NormalButton = styled.button`
+  ${(props) => buttonStyles(props)}
 `;

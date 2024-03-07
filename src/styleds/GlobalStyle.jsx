@@ -47,14 +47,14 @@ const GlobalStyle = createGlobalStyle`
     .body-1 {
       font-family: ${(props) => props.theme.font_family.jetbrains};
       font-size: ${(props) => props.theme.font_size.body_1};
-      line-height: ${(props) => props.theme.font_size.body_1};
+      line-height: ${(props) => props.theme.line_height.body_1};
       letter-spacing: ${(props) => props.theme.letter_spacing.body_1};
     };
 
     .body-2 {
       font-family: ${(props) => props.theme.font_family.jetbrains};
       font-size: ${(props) => props.theme.font_size.body_2};
-      line-height: ${(props) => props.theme.font_size.body_2};
+      line-height: ${(props) => props.theme.line_height.body_2};
       letter-spacing: ${(props) => props.theme.letter_spacing.body_2};
     };
 
@@ -192,6 +192,16 @@ const GlobalStyle = createGlobalStyle`
       height: 30px;
       background-size: cover;
     };
+
+    html {
+      font-size: 8px;
+    };
+
+    @media screen and (min-width: 375px) {
+      html {
+        font-size: 12px;
+      }
+    }
 
     //Media global
     @media screen and (min-width: 461px) {

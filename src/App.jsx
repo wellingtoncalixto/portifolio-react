@@ -3,6 +3,7 @@ import Header from "./components/header/Header";
 import Introducao from "./components/introducao/Introducao";
 import GlobalStyle from "./styleds/GlobalStyle";
 import Theme from "./styleds/Theme";
+import Sobre from "./components/sobre-min/Sobre";
 
 function App() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -24,6 +25,7 @@ function App() {
       <GlobalStyle />
       <Header mobileVisibility={isMobile} />
       <Introducao />
+      <Sobre />
     </Theme>
   );
 }

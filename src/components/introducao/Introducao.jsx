@@ -8,9 +8,8 @@ import {
   SocialMidiasContainer,
 } from "./styles";
 
-import InternalButtonComponent from "../button/InternalButtonComponent";
-
 import IconLinkComponent from "../icon-link/IconLinkComponent";
+import ButtonComponent from "../button/ButtonComponent";
 
 const Introducao = () => {
   return (
@@ -25,15 +24,17 @@ const Introducao = () => {
           </h3>
         </Apresentation>
         <ButtonsContainer>
-          <InternalButtonComponent
-            type="secondary"
+          <ButtonComponent
+            buttonType="linkButton"
+            secondary={true}
             text="Projetos"
             className="cta-medium"
             href="#projects"
           />
 
-          <InternalButtonComponent
-            type="primary"
+          <ButtonComponent
+            buttonType="linkButton"
+            primary={true}
             text="Contate-me"
             className="cta-medium"
             href="#contact"
