@@ -6,7 +6,7 @@ import {
   AboutText,
   DownloadCVContainer,
 } from "./style";
-import ButtonComponent from "../button/ButtonComponent";
+import ButtonComponent from "../../components/button/ButtonComponent";
 import cv from "../../files/wellington_calixto.pdf";
 
 const Sobre = () => {
@@ -45,7 +45,7 @@ const Sobre = () => {
         <DownloadCVContainer>
           <ButtonComponent
             buttonType="linkButton"
-            primary={true}
+            $buttonStyle={"primary"}
             text="Download CV"
             className="cta-medium"
             href={cv}

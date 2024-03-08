@@ -7,9 +7,8 @@ import {
   IntroducaoSection,
   SocialMidiasContainer,
 } from "./styles";
-
-import IconLinkComponent from "../icon-link/IconLinkComponent";
-import ButtonComponent from "../button/ButtonComponent";
+import ButtonComponent from "../../components/button/ButtonComponent";
+import IconLinkComponent from "../../components/icon-link/IconLinkComponent";
 
 const Introducao = () => {
   return (
@@ -26,7 +25,7 @@ const Introducao = () => {
         <ButtonsContainer>
           <ButtonComponent
             buttonType="linkButton"
-            secondary={true}
+            $buttonStyle={"secondary"}
             text="Projetos"
             className="cta-medium"
             href="#projects"
@@ -34,7 +33,7 @@ const Introducao = () => {
 
           <ButtonComponent
             buttonType="linkButton"
-            primary={true}
+            $buttonStyle={"primary"}
             text="Contate-me"
             className="cta-medium"
             href="#contact"

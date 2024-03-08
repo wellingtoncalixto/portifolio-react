@@ -197,11 +197,13 @@ const GlobalStyle = createGlobalStyle`
       font-size: 8px;
     };
 
-    @media screen and (min-width: 375px) {
+    @media screen and (min-width: 321px) and (max-width: 375px)   {
       html {
         font-size: 12px;
       }
     }
+
+    
 
     //Media global
     @media screen and (min-width: 461px) {

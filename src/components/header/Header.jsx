@@ -18,15 +18,15 @@ const Header = ({ mobileVisibility }) => {
         <PortifolioText className="heading-1">Portifolio</PortifolioText>
         <MenuHamburgerSvg
           onClick={() => setMobileMenuActive(true)}
-          mobileVisibility={mobileVisibility}
-          mobileMenuActive={mobileMenuActive}
+          $mobileVisibility={mobileVisibility}
+          $mobileMenuActive={mobileMenuActive}
         />
         <MenuList $mobileMenuActive={mobileMenuActive}>
           <MenuItem>
             <CloseSvg
               onClick={() => setMobileMenuActive(false)}
-              mobileVisibility={mobileVisibility}
-              mobileMenuActive={mobileMenuActive}
+              $mobileVisibility={mobileVisibility}
+              $mobileMenuActive={mobileMenuActive}
             />
           </MenuItem>
           <MenuItem>

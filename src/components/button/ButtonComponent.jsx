@@ -1,22 +1,16 @@
 import React from "react";
 import { LinkButton, NormalButton } from "./styles";
 
-const ButtonComponent = ({
-  text,
-  buttonType,
-  primary,
-  secondary,
-  ...props
-}) => {
+const ButtonComponent = ({ text, buttonType, $buttonStyle, ...props }) => {
   return (
     <>
       {buttonType === "linkButton" && (
-        <LinkButton primary={primary} secondary={secondary} {...props}>
+        <LinkButton $buttonStyle={$buttonStyle} {...props}>
           {text}
         </LinkButton>
       )}
       {buttonType === "normalButton" && (
-        <NormalButton primary={primary} secondary={secondary} {...props}>
+        <NormalButton $buttonStyle={$buttonStyle} {...props}>
           {text}
         </NormalButton>
       )}

@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "./components/header/Header";
-import Introducao from "./components/introducao/Introducao";
 import GlobalStyle from "./styleds/GlobalStyle";
 import Theme from "./styleds/Theme";
-import Sobre from "./components/sobre-min/Sobre";
+import Introducao from "./sections/introducao/Introducao";
+import Sobre from "./sections/sobre-min/Sobre";
+import Projetos from "./sections/projetos/Projetos";
 
 function App() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -26,6 +27,7 @@ function App() {
       <Header mobileVisibility={isMobile} />
       <Introducao />
       <Sobre />
+      <Projetos mobileVisibility={isMobile} />
     </Theme>
   );
 }
