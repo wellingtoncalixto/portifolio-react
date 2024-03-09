@@ -187,6 +187,16 @@ const GlobalStyle = createGlobalStyle`
       color: ${(props) => props.theme.cores.b5};
     };
 
+    .sub-title {
+      width: 100%;
+      text-align: center;
+      margin-top: ${(props) => props.theme.space.global_space_60};
+      color: ${(props) => props.theme.cores.c4};
+      position: relative;
+      border-left: 4px solid ${(props) => props.theme.cores.b5};
+      border-right: 4px solid ${(props) => props.theme.cores.b5};
+    }
+
     .icon {
       width: 30px;
       height: 30px;
@@ -202,8 +212,6 @@ const GlobalStyle = createGlobalStyle`
         font-size: 12px;
       }
     }
-
-    
 
     //Media global
     @media screen and (min-width: 461px) {

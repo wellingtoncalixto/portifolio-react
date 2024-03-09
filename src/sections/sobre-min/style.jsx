@@ -23,15 +23,6 @@ export const AboutContent = styled.div`
 `;
 
 export const AboutSubTitle = styled.h2`
-  width: 100%;
-  max-width: 650px;
-  text-align: center;
-  margin-top: ${(props) => props.theme.space.global_space_60};
-  color: ${(props) => props.theme.cores.c4};
-  position: relative;
-  border-left: 4px solid ${(props) => props.theme.cores.b5};
-  border-right: 4px solid ${(props) => props.theme.cores.b5};
-
   @media screen and (min-width: 1200px) {
     grid-column: 2;
   }
