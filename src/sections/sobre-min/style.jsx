@@ -29,7 +29,6 @@ export const AboutSubTitle = styled.h2`
 `;
 
 export const AboutText = styled.p`
-  max-width: 650px;
   margin-top: ${(props) => props.theme.space.global_space_20};
 
   &:first-of-type {
