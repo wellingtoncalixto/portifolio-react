@@ -5,12 +5,6 @@ export const Card = styled.div`
   display: flex;
   flex-shrink: 0;
   justify-content: center;
-
-  ${(props) =>
-    props.$mobileVisibility === false &&
-    css`
-      display: block;
-    `}
 `;
 
 export const CardContent = styled.div`
