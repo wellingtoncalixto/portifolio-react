@@ -6,6 +6,7 @@ import Introducao from "./sections/introducao/Introducao";
 import Sobre from "./sections/sobre-min/Sobre";
 import Projetos from "./sections/projetos/Projetos";
 import Contato from "./sections/contato/Contato";
+import Footer from "./sections/footer/Footer";
 
 function App() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -24,12 +25,15 @@ function App() {
 
   return (
     <Theme>
-      <GlobalStyle />
-      <Header mobileVisibility={isMobile} />
-      <Introducao />
-      <Sobre />
-      <Projetos mobileVisibility={isMobile} />
-      <Contato />
+      <main>
+        <GlobalStyle />
+        <Header mobileVisibility={isMobile} />
+        <Introducao />
+        <Sobre />
+        <Projetos mobileVisibility={isMobile} />
+        <Contato />
+      </main>
+      <Footer />
     </Theme>
   );
 }
