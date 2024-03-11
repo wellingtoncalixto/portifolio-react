@@ -12,11 +12,11 @@ function App() {
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useMemo(() => {
-    window.addEventListener("resize", isMobileVisibility);
-    isMobileVisibility();
+    window.addEventListener("resize", setMobile);
+    setMobile();
   }, []);
 
-  function isMobileVisibility() {
+  function setMobile() {
     const windowWidth = window.innerWidth;
     if (windowWidth < 768) {
       setIsMobile(true);
@@ -27,10 +27,10 @@ function App() {
     <Theme>
       <main>
         <GlobalStyle />
-        <Header mobileVisibility={isMobile} />
+        <Header isMobile={isMobile} />
         <Introducao />
         <Sobre />
-        <Projetos mobileVisibility={isMobile} />
+        <Projetos isMobile={isMobile} />
         <Contato />
       </main>
       <Footer />

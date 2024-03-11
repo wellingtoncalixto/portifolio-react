@@ -43,14 +43,14 @@ const Introducao = () => {
           <p className="body-1">Redes Sociais:</p>
           <IconLinkComponent
             link="https://github.com/wellingtoncalixto"
-            height={"30px"}
-            width={"30px"}
+            height={"1.875rem"}
+            width={"1.875rem"}
             icon="git"
           />
           <IconLinkComponent
             link="https://www.linkedin.com/in/wellingtoncalixto/"
-            height={"30px"}
-            width={"30px"}
+            height={"1.875rem"}
+            width={"1.875rem"}
             icon="linkedin"
           />
         </SocialMidiasContainer>

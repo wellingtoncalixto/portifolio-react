@@ -95,20 +95,25 @@ const GlobalStyle = createGlobalStyle`
     };
 
     /* Estilos Globais */
+
+    * {
+    box-sizing: border-box;
+    }
+
     html {
       font-size: 12px;
-    };
+    }
 
     html::-webkit-scrollbar {
-      width: 8px;
+      width: 0.5rem;
       height: 0px;
     };
 
     html::-webkit-scrollbar-thumb {
       background: ${(props) => props.theme.cores.b7};
-      border-left: 2px solid #fff;
-      border-right: 2px solid #fff;
-      border-radius: 4px;
+      border-left: 0.125rem solid #fff;
+      border-right: 0.125rem solid #fff;
+      border-radius: 0.25rem;
     };
 
     html::-webkit-scrollbar-track {
@@ -116,15 +121,9 @@ const GlobalStyle = createGlobalStyle`
     };
 
     body {
-      width: 100%;
       margin: 0px;
       background-color: ${(props) => props.theme.cores.b1};
-      box-sizing: border-box;
       text-decoration: none;
-    };
-
-    main {
-      width: 100%;
     };
 
     h1,
@@ -149,17 +148,15 @@ const GlobalStyle = createGlobalStyle`
     .section {
       width: 100%;
       height: 100vh;
-      box-sizing: border-box;
     };
 
     .content {
       width: 100%;
       height: 100%;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: ${(props) => props.theme.space.global_space_24};
+      
     };
 
     .display-none {
@@ -188,7 +185,6 @@ const GlobalStyle = createGlobalStyle`
     };
 
     .sub-title {
-      width: 100%;
       text-align: center;
       margin-top: ${(props) => props.theme.space.global_space_60};
       color: ${(props) => props.theme.cores.c4};
@@ -197,38 +193,31 @@ const GlobalStyle = createGlobalStyle`
       border-right: 4px solid ${(props) => props.theme.cores.b5};
     }
 
-    .icon {
-      width: 30px;
-      height: 30px;
-      background-size: cover;
-    };
+ 
 
-    html {
-      font-size: 8px;
-    };
 
-    @media screen and (min-width: 321px) and (max-width: 375px)   {
-      html {
-        font-size: 12px;
-      }
+    
+
+    @media screen and (min-width: 321px) {
+      
+     }
+
+    @media screen and (min-width: 768px) { 
+     
+     }
+
+    @media screen and (min-width: 992px) {  
+
     }
 
-    //Media global
-    @media screen and (min-width: 461px) {
-      html {
-        font-size: 16px;
-      }
-    }
+    @media screen and (min-width: 1200px) { 
+      
+     }
 
-    /* XX-Large devices (larger desktops, 1400px and up) */
-    @media screen and (min-width: 1400px) {
-      .content {
-        padding-left: 0px;
-        padding-right: 0px;
-        max-width: 1300px;
-        margin: 0px auto;
-      }
-    }
+    @media screen and (min-width: 1400px) { 
+      
+     }
+
   `;
 
 export default GlobalStyle;

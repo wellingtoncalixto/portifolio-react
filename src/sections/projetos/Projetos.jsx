@@ -2,7 +2,7 @@ import React from "react";
 
 import projetoImg from "../../assets/card-image.png";
 
-import { CardsContainer, ProjectsSection } from "./styled";
+import { CardsContainer, ProjectsSection, CardList } from "./styled";
 import CarouselComponent from "./components/carousel/CarouselComponent";
 import CardComponent from "../../components/card/CardComponent";
 
@@ -78,24 +78,28 @@ const cardsData = [
   },
 ];
 
-const Projetos = ({ mobileVisibility }) => {
+const Projetos = ({ isMobile }) => {
   return (
-    <ProjectsSection id="projects" className="section">
+    <ProjectsSection id="projects" className="section" $isMobile={isMobile}>
       <div className="content">
         <div className="title-container">
           <h1 className="heading-1 title">Projetos</h1>
         </div>
-        <CardsContainer $mobileVisibility={mobileVisibility}>
-          {mobileVisibility && <CarouselComponent cardsData={cardsData} />}
-          {!mobileVisibility &&
-            cardsData.map((cardData, index) => (
-              <CardComponent
-                key={index}
-                cardData={cardData}
-                $mobileVisibility={mobileVisibility}
-              />
-            ))}
-        </CardsContainer>
+
+        {isMobile && <CarouselComponent cardsData={cardsData} />}
+        {!isMobile && (
+          <CardsContainer>
+            <CardList>
+              {cardsData.map((cardData, index) => (
+                <CardComponent
+                  key={index}
+                  cardData={cardData}
+                  isMobile={isMobile}
+                />
+              ))}
+            </CardList>
+          </CardsContainer>
+        )}
       </div>
     </ProjectsSection>
   );

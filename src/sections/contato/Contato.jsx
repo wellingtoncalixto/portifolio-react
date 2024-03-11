@@ -59,7 +59,7 @@ const Contato = () => {
           <h1 className="heading-1 title">Contato</h1>
         </div>
         <div className="message-container">
-          <h2 className="sub-title heading-2">
+          <h2 className="sub-title heading-3-kanit">
             Se gostou do meu trabalho e quer entrar em contato para uma
             oportunidade ou apenas para me dar um Oi, você pode me mandar uma
             mensagem preenchendo os campos abaixo ou entrar em contato pelas
@@ -93,24 +93,24 @@ const Contato = () => {
               target="_blank"
               rel="noopener noreferrer"
               icon="git"
-              width="42px"
-              height="42px"
+              width="2.5rem"
+              height="2.5rem"
             />
             <IconLinkComponent
               href="https://www.linkedin.com/in/wellingtoncalixto/"
               target="_blank"
               rel="noopener noreferrer"
               icon="linkedin"
-              width="42px"
-              height="42px"
+              width="2.5rem"
+              height="2.5rem"
             />
             <IconLinkComponent
               href="https://wa.me/5519984268415"
               target="_blank"
               rel="noopener noreferrer"
               icon="whatsapp"
-              width="42px"
-              height="42px"
+              width="2.5rem"
+              height="2.5rem"
             />
           </MediasContainer>
         </FormContainer>

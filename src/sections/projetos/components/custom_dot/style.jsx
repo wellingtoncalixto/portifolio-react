@@ -2,18 +2,18 @@ import styled, { css } from "styled-components";
 
 export const DotButton = styled.button`
   display: block;
-  width: 21px;
-  height: 21px;
+  width: 1.25rem;
+  height: 1.25rem;
   background: ${(props) => props.theme.cores.b9};
-  border-radius: 50%;
-  margin: 5px;
+  border-radius: calc(1.25rem + 100%);
+  margin: 0.25rem;
   border: none;
 
   ${(props) =>
     props.$active &&
     css`
-      width: 51px;
-      border-radius: 10px;
+      width: 3.1875rem;
+      border-radius: 0.75rem;
       position: relative;
       transition: 0.3s;
 
@@ -22,12 +22,12 @@ export const DotButton = styled.button`
         position: absolute;
         display: block;
         transition: 0.3s;
-        width: 41px;
-        height: 7px;
+        width: 2.5625rem;
+        height: 0.4375rem;
         border-radius: 10px;
         background: ${(props) => props.theme.cores.b4};
-        bottom: 7px;
-        left: 5px;
+        bottom: 0.4375rem;
+        left: 0.3125rem;
         animation-name: show;
         animation-duration: 0.3s;
       }
@@ -37,7 +37,7 @@ export const DotButton = styled.button`
           width: 0px;
         }
         to {
-          width: 41px;
+          width: 2.5625rem;
         }
       }
     `}

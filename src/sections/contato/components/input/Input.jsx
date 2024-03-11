@@ -5,26 +5,39 @@ import {
   ErrorMessage,
   Container,
 } from "./style";
+import PropTypes from "prop-types";
 
-const Input = ({ id, label, setValue, error, ...props }) => {
+const Input = (props) => {
   return (
     <Container>
-      <Label className="label-1" htmlFor={id}>{label}</Label>
+      <Label className="label-1" htmlFor={props.id}>
+        {props.label}
+      </Label>
       <InputComponent
         type="text"
-        id={id}
-        name={id}
-        onChange={({ target }) => setValue(target.value)}
-        $error={error}
-        {...props}
+        id={props.id}
+        name={props.id}
+        onChange={({ target }) => props.setValue(target.value)}
+        $error={props.error}
+        onBlur={props.onBlur}
       />
-      {error ? (
+      {props.error ? (
         <ErrorMessage className="cta-medium" style={{ display: "block" }}>
-          {error}
+          {props.error}
         </ErrorMessage>
       ) : null}
     </Container>
   );
+};
+
+Input.prototype = {
+  id: PropTypes.number || PropTypes.string,
+  label: PropTypes.string,
+  setValue: PropTypes.func,
+  error: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  validate: PropTypes.func,
 };
 
 export default Input;

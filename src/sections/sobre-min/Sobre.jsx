@@ -17,7 +17,7 @@ const Sobre = () => {
           <h1 className="heading-1 title">Sobre Mim</h1>
         </div>
         <AboutContent>
-          <AboutSubTitle className="sub-title heading-2">
+          <AboutSubTitle className="sub-title heading-3-kanit">
             Fico feliz que queira saber um pouco mais sobre mim e meu trabalho.
           </AboutSubTitle>
           <AboutText className="body-1">

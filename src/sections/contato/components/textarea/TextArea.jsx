@@ -1,26 +1,38 @@
 import React from "react";
 import { Container, Label, TextArea as TextAreaComponent } from "./style";
 import { ErrorMessage } from "../input/style";
+import PropTypes from "prop-types";
 
-const TextArea = ({ id, label, setValue, error, ...props }) => {
+const TextArea = (props) => {
   return (
     <Container>
-      <Label className="label-1" htmlFor={id}>{label}</Label>
+      <Label className="label-1" htmlFor={props.id}>
+        {props.label}
+      </Label>
       <TextAreaComponent
         type="text"
-        id={id}
-        name={id}
-        onChange={({ target }) => setValue(target.value)}
-        $error={error}
-        {...props}
+        id={props.sid}
+        name={props.id}
+        onChange={({ target }) => props.setValue(target.value)}
+        onBlur={props.onBlur}
       />
-      {error ? (
+      {props.error ? (
         <ErrorMessage className="cta-medium" style={{ display: "block" }}>
-          {error}
+          {props.error}
         </ErrorMessage>
       ) : null}
     </Container>
   );
+};
+
+TextArea.prototype = {
+  id: PropTypes.number || PropTypes.string,
+  label: PropTypes.string,
+  setValue: PropTypes.func,
+  error: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  validate: PropTypes.func,
 };
 
 export default TextArea;

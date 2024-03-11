@@ -10,7 +10,7 @@ import {
   PortifolioText,
 } from "./styles";
 
-const Header = ({ mobileVisibility }) => {
+const Header = ({ isMobile }) => {
   const [mobileMenuActive, setMobileMenuActive] = React.useState(false);
   return (
     <HeaderComponent>
@@ -18,14 +18,14 @@ const Header = ({ mobileVisibility }) => {
         <PortifolioText className="heading-1">Portifolio</PortifolioText>
         <MenuHamburgerSvg
           onClick={() => setMobileMenuActive(true)}
-          $mobileVisibility={mobileVisibility}
+          $isMobile={isMobile}
           $mobileMenuActive={mobileMenuActive}
         />
         <MenuList $mobileMenuActive={mobileMenuActive}>
           <MenuItem>
             <CloseSvg
               onClick={() => setMobileMenuActive(false)}
-              $mobileVisibility={mobileVisibility}
+              $isMobile={isMobile}
               $mobileMenuActive={mobileMenuActive}
             />
           </MenuItem>
