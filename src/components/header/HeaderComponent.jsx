@@ -1,7 +1,7 @@
 import React from "react";
 import {
   CloseSvg,
-  HeaderComponent,
+  Header,
   MenuHamburgerSvg,
   MenuItem,
   MenuLink,
@@ -10,7 +10,7 @@ import {
   PortifolioText,
 } from "./styles";
 
-const Header = ({ isMobile }) => {
+const HeaderComponent = ({ isMobile }) => {
   const [mobileMenuActive, setMobileMenuActive] = React.useState(false);
 
   React.useEffect(() => {
@@ -22,7 +22,7 @@ const Header = ({ isMobile }) => {
   }, [mobileMenuActive]);
 
   return (
-    <HeaderComponent>
+    <Header>
       <Navi>
         <PortifolioText className="heading-1">Portifolio</PortifolioText>
         {isMobile && mobileMenuActive === false && (
@@ -59,8 +59,8 @@ const Header = ({ isMobile }) => {
           </MenuItem>
         </MenuList>
       </Navi>
-    </HeaderComponent>
+    </Header>
   );
 };
 
-export default Header;
+export default HeaderComponent;

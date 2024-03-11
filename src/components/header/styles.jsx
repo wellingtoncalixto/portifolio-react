@@ -11,7 +11,7 @@ export const CloseSvg = styled(CloseIconSvg)`
   z-index: 3;
 `;
 
-export const HeaderComponent = styled.header`
+export const Header = styled.header`
   position: absolute;
   width: 100vw;
   height: auto;
