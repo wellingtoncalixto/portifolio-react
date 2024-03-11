@@ -10,17 +10,20 @@ import Footer from "./sections/footer/Footer";
 
 function App() {
   const [isMobile, setIsMobile] = React.useState(false);
+  const [headerHeight, setHeaderHeight] = React.useState();
 
-  React.useMemo(() => {
-    window.addEventListener("resize", setMobile);
-    setMobile();
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    setHeaderHeight(document.querySelector("header").offsetHeight);
+    handleResize();
   }, []);
 
-  function setMobile() {
+  function handleResize() {
     const windowWidth = window.innerWidth;
     if (windowWidth < 768) {
       setIsMobile(true);
     } else setIsMobile(false);
+    setHeaderHeight(document.querySelector("header").offsetHeight);
   }
 
   return (
@@ -28,12 +31,12 @@ function App() {
       <main>
         <GlobalStyle />
         <Header isMobile={isMobile} />
-        <Introducao />
-        <Sobre />
+        <Introducao heightHeader={headerHeight && headerHeight} />
+        {/* <Sobre />
         <Projetos isMobile={isMobile} />
-        <Contato />
+        <Contato /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </Theme>
   );
 }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ButtonComponent from "../../components/button/ButtonComponent";
 
 export const ContatoSection = styled.section`
-  background-color: ${(props) => props.theme.cores.white};
+  background-color: ${(props) => props.theme.colors.white};
 `;
 
 export const FormContainer = styled.div``;

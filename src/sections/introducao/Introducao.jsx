@@ -10,9 +10,9 @@ import {
 import ButtonComponent from "../../components/button/ButtonComponent";
 import IconLinkComponent from "../../components/icon-link/IconLinkComponent";
 
-const Introducao = () => {
+const Introducao = ({ heightHeader }) => {
   return (
-    <IntroducaoSection className="section">
+    <IntroducaoSection className="section" $headerHeight={`${heightHeader}px`}>
       <div className="content">
         <Apresentation>
           <ApresentationTitle className="display-1">

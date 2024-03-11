@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  cores: {
+  colors: {
     black: "#000000",
     white: "#ffffff",
     c1: "#1c1c1c",
@@ -26,22 +26,22 @@ const theme = {
     b9: "#03045e",
   },
   space: {
-    4: "0.25rem",
-    8: "0.5rem",
-    12: "0.75rem",
-    16: "1rem",
-    20: "1.25rem",
-    24: "1.5rem",
-    32: "2rem",
-    40: "2.5rem",
-    48: "3rem",
-    60: "3.75rem",
-    72: "4.5rem",
-    80: "5rem",
-    100: "6.25rem",
-    200: "12.5rem",
-    300: "18.75rem",
-    400: "20rem",
+    _4: "0.25rem",
+    _8: "0.5rem",
+    _12: "0.75rem",
+    _16: "1rem",
+    _20: "1.25rem",
+    _24: "1.5rem",
+    _32: "2rem",
+    _40: "2.5rem",
+    _48: "3rem",
+    _60: "3.75rem",
+    _72: "4.5rem",
+    _80: "5rem",
+    _100: "6.25rem",
+    _200: "12.5rem",
+    _300: "18.75rem",
+    _400: "20rem",
   },
   font_family: {
     kanit: "Kanit, Helvetica, sans-serif",

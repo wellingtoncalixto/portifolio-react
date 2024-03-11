@@ -12,23 +12,36 @@ import {
 
 const Header = ({ isMobile }) => {
   const [mobileMenuActive, setMobileMenuActive] = React.useState(false);
+
+  React.useEffect(() => {
+    if (mobileMenuActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "overflow";
+    }
+  }, [mobileMenuActive]);
+
   return (
     <HeaderComponent>
       <Navi>
         <PortifolioText className="heading-1">Portifolio</PortifolioText>
-        <MenuHamburgerSvg
-          onClick={() => setMobileMenuActive(true)}
-          $isMobile={isMobile}
-          $mobileMenuActive={mobileMenuActive}
-        />
-        <MenuList $mobileMenuActive={mobileMenuActive}>
-          <MenuItem>
-            <CloseSvg
-              onClick={() => setMobileMenuActive(false)}
-              $isMobile={isMobile}
-              $mobileMenuActive={mobileMenuActive}
-            />
-          </MenuItem>
+        {isMobile && mobileMenuActive === false && (
+          <MenuHamburgerSvg
+            onClick={() => setMobileMenuActive(true)}
+            $isMobile={isMobile}
+            $mobileMenuActive={mobileMenuActive}
+          />
+        )}
+
+        {isMobile && mobileMenuActive === true && (
+          <CloseSvg
+            onClick={() => setMobileMenuActive(false)}
+            $isMobile={isMobile}
+            $mobileMenuActive={mobileMenuActive}
+          />
+        )}
+
+        <MenuList $mobileMenuActive={mobileMenuActive} $isMobile={isMobile}>
           <MenuItem>
             <MenuLink className="body-1" href="#about">
               Sobre Mim

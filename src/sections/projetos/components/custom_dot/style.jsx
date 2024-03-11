@@ -4,7 +4,7 @@ export const DotButton = styled.button`
   display: block;
   width: 1.25rem;
   height: 1.25rem;
-  background: ${(props) => props.theme.cores.b9};
+  background: ${(props) => props.theme.colors.b9};
   border-radius: calc(1.25rem + 100%);
   margin: 0.25rem;
   border: none;
@@ -25,7 +25,7 @@ export const DotButton = styled.button`
         width: 2.5625rem;
         height: 0.4375rem;
         border-radius: 10px;
-        background: ${(props) => props.theme.cores.b4};
+        background: ${(props) => props.theme.colors.b4};
         bottom: 0.4375rem;
         left: 0.3125rem;
         animation-name: show;

@@ -96,12 +96,16 @@ const GlobalStyle = createGlobalStyle`
 
     /* Estilos Globais */
 
-    * {
+    *,*:after,*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    }
+    padding: 0;
+    margin: 0
+}
 
     html {
-      font-size: 12px;
+      font-size: 4px;
     }
 
     html::-webkit-scrollbar {
@@ -110,7 +114,7 @@ const GlobalStyle = createGlobalStyle`
     };
 
     html::-webkit-scrollbar-thumb {
-      background: ${(props) => props.theme.cores.b7};
+      background: ${(props) => props.theme.colors.b7};
       border-left: 0.125rem solid #fff;
       border-right: 0.125rem solid #fff;
       border-radius: 0.25rem;
@@ -122,7 +126,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
       margin: 0px;
-      background-color: ${(props) => props.theme.cores.b1};
+      background-color: ${(props) => props.theme.colors.b1};
       text-decoration: none;
     };
 
@@ -146,21 +150,12 @@ const GlobalStyle = createGlobalStyle`
 
     /* Classes Globais */
     .section {
-      width: 100%;
+      width: 100vw;
       height: 100vh;
     };
 
     .content {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      
-    };
-
-    .display-none {
-      display: none;
+      padding: 0 ${({ theme }) => theme.space._24};
     };
 
     .title-container {
@@ -170,52 +165,58 @@ const GlobalStyle = createGlobalStyle`
     };
 
     .title {
-      color: ${(props) => props.theme.cores.c2};
-      border-bottom: 0.25rem solid ${(props) => props.theme.cores.b5};
+      color: ${(props) => props.theme.colors.c2};
+      border-bottom: 0.25rem solid ${(props) => props.theme.colors.b5};
     };
 
     .title::before {
       content: "<";
-      color: ${(props) => props.theme.cores.b5};
+      color: ${(props) => props.theme.colors.b5};
     };
 
     .title::after {
       content: ">";
-      color: ${(props) => props.theme.cores.b5};
+      color: ${(props) => props.theme.colors.b5};
     };
 
     .sub-title {
       text-align: center;
       margin-top: ${(props) => props.theme.space.global_space_60};
-      color: ${(props) => props.theme.cores.c4};
+      color: ${(props) => props.theme.colors.c4};
       position: relative;
-      border-left: 4px solid ${(props) => props.theme.cores.b5};
-      border-right: 4px solid ${(props) => props.theme.cores.b5};
+      border-left: 4px solid ${(props) => props.theme.colors.b5};
+      border-right: 4px solid ${(props) => props.theme.colors.b5};
     }
 
- 
-
-
-    
-
-    @media screen and (min-width: 321px) {
-      
+    @media screen and (min-width: 320px) {
+        html {
+          font-size: 8px;
+        }
      }
 
     @media screen and (min-width: 768px) { 
-     
-     }
+      html {
+          font-size: 12px;
+        }
+    }
 
     @media screen and (min-width: 992px) {  
-
+      
     }
 
     @media screen and (min-width: 1200px) { 
-      
+      html {
+          font-size: 16px;
+        }
      }
 
     @media screen and (min-width: 1400px) { 
-      
+      .content {
+        padding-left: 0px;
+        padding-right: 0px;
+        max-width: 1300px;
+        margin: 0px auto;
+      }
      }
 
   `;
