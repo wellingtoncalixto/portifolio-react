@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./components/header/Header";
 import GlobalStyle from "./styleds/GlobalStyle";
 import Theme from "./styleds/Theme";
 import Introducao from "./sections/introducao/Introducao";
@@ -7,6 +6,7 @@ import Sobre from "./sections/sobre-min/Sobre";
 import Projetos from "./sections/projetos/Projetos";
 import Contato from "./sections/contato/Contato";
 import Footer from "./sections/footer/Footer";
+import HeaderComponent from "./components/header/HeaderComponent";
 
 function App() {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -30,7 +30,7 @@ function App() {
     <Theme>
       <main>
         <GlobalStyle />
-        <Header isMobile={isMobile} />
+        <HeaderComponent isMobile={isMobile} />
         <Introducao heightHeader={headerHeight && headerHeight} />
         {/* <Sobre />
         <Projetos isMobile={isMobile} />
