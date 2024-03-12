@@ -105,7 +105,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
     html {
-      font-size: 4px;
+      font-size: 16px;
     }
 
     html::-webkit-scrollbar {
@@ -130,6 +130,19 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     };
 
+    main {
+      display: grid;
+      grid-template-areas: 
+      "header" 
+      "introducao" 
+      "about" 
+      "projects" 
+      "contact" 
+      ;
+      grid-template-rows: max-content max-content max-content max-content max-content;
+      
+    }
+
     h1,
     h2,
     h3,
@@ -149,11 +162,6 @@ const GlobalStyle = createGlobalStyle`
     };
 
     /* Classes Globais */
-    .section {
-      width: 100vw;
-      height: 100vh;
-    };
-
     .content {
       padding: 0 ${({ theme }) => theme.space._24};
     };
@@ -189,28 +197,40 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media screen and (min-width: 320px) {
-        html {
-          font-size: 8px;
-        }
-     }
-
-    @media screen and (min-width: 768px) { 
       html {
-          font-size: 12px;
-        }
+          font-size: 12px;    
+      }   
+    }  
+    
+    @media screen and (min-width: 320px) and (min-height: 100px) and (max-height: 320px) {
+      main {
+        grid-template-rows: max-content max-content max-content repeat(2, 100vh);
+      }
+    } 
+
+    @media screen and (min-width: 320px) and (min-height: 321px){
+      main {
+        grid-template-rows: max-content 100vh max-content repeat(2, 100vh);
+      }
+    } 
+
+    @media screen and (min-width:768px) {  
+      main {
+        grid-template-rows: max-content 100vh max-content repeat(2, 100vh);
+      }
     }
 
-    @media screen and (min-width: 992px) {  
-      
-    }
-
-    @media screen and (min-width: 1200px) { 
+    @media screen and (min-width:992px) and (min-height: 700px) {  
       html {
           font-size: 16px;
         }
-     }
+    }
 
     @media screen and (min-width: 1400px) { 
+      main {
+        grid-template-rows: max-content repeat(4, 100vh);
+      }
+
       .content {
         padding-left: 0px;
         padding-right: 0px;

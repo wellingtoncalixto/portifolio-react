@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import introducaoPhoto from "../../assets/photo-introducao.png";
-import PropTypes from "prop-types";
 
 export const IntroducaoSection = styled.section`
+  grid-area: introducao;
   display: flex;
   align-items: center;
   padding-top: calc(
     ${(props) => props.$headerHeight} + 2 * ${(props) => props.theme.space._24}
   );
-
+  padding-bottom: ${(props) => props.theme.space._24};
   & > .content {
     display: flex;
     justify-content: center;
@@ -18,15 +18,12 @@ export const IntroducaoSection = styled.section`
     width: 100%;
   }
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 769px) and (min-height: 450px) and (max-height: 1000px) {
     background-image: url(${introducaoPhoto});
     background-repeat: no-repeat;
     background-position: right top;
-    background-size: auto 50vh;
-  }
-
-  @media screen and (min-width: 992px) {
     background-size: 50vw auto;
+
     & > .content {
       align-items: flex-start;
     }
@@ -36,21 +33,25 @@ export const IntroducaoSection = styled.section`
 export const Apresentation = styled.div`
   text-align: center;
 
-  @media screen and (min-width: 769px) {
-    margin-top: ${(props) => props.theme.space._200};
-  }
-
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 769px) and (min-height: 450px) and (max-height: 1000px) {
     margin-top: 0;
     text-align: start;
-    max-width: 50%;
+    width: max-content;
   }
 `;
 
-export const ApresentationTitle = styled.h1``;
+export const ApresentationTitle = styled.h1`
+  @media screen and (min-width: 769px) {
+    white-space: nowrap;
+  }
+`;
 
-export const BlueText = styled.span`
+export const BlueText = styled.h1`
   color: ${(props) => props.theme.colors.b7};
+
+  @media screen and (min-width: 769px) {
+    white-space: nowrap;
+  }
 `;
 
 export const ButtonsContainer = styled.div`

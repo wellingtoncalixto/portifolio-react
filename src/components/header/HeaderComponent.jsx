@@ -16,8 +16,8 @@ const HeaderComponent = ({ isMobile }) => {
   React.useEffect(() => {
     if (mobileMenuActive) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "overflow";
+    } else if (!mobileMenuActive) {
+      document.body.style.overflow = "visible";
     }
   }, [mobileMenuActive]);
 
@@ -43,17 +43,29 @@ const HeaderComponent = ({ isMobile }) => {
 
         <MenuList $mobileMenuActive={mobileMenuActive} $isMobile={isMobile}>
           <MenuItem>
-            <MenuLink className="body-1" href="#about">
+            <MenuLink
+              className="body-1"
+              href="#about"
+              onClick={() => isMobile && setMobileMenuActive(false)}
+            >
               Sobre Mim
             </MenuLink>
           </MenuItem>
           <MenuItem>
-            <MenuLink className="body-1" href="#projects">
+            <MenuLink
+              className="body-1"
+              href="#projects"
+              onClick={() => isMobile && setMobileMenuActive(false)}
+            >
               Projeto
             </MenuLink>
           </MenuItem>
           <MenuItem>
-            <MenuLink className="body-1" href="#contact">
+            <MenuLink
+              className="body-1"
+              href="#contact"
+              onClick={() => isMobile && setMobileMenuActive(false)}
+            >
               Contato
             </MenuLink>
           </MenuItem>

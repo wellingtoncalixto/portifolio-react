@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 const communButtonStyles = ({ theme }) => {
   const padrao = css`
+    display: block;
     text-decoration: none;
     width: max-content;
     padding: ${theme.space._8} ${theme.space._16};

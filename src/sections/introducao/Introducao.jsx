@@ -9,15 +9,20 @@ import {
 } from "./styles";
 import ButtonComponent from "../../components/button/ButtonComponent";
 import IconLinkComponent from "../../components/icon-link/IconLinkComponent";
+import PropTypes from "prop-types";
 
-const Introducao = ({ heightHeader }) => {
+const Introducao = ({ heightHeader, windowHeight }) => {
   return (
-    <IntroducaoSection className="section" $headerHeight={`${heightHeader}px`}>
+    <IntroducaoSection
+      $headerHeight={`${heightHeader}px`}
+      $windowHeight={windowHeight}
+    >
       <div className="content">
         <Apresentation>
           <ApresentationTitle className="display-1">
-            Olá, meu nome é <BlueText>Wellington Calixto</BlueText>
+            Olá, meu nome é
           </ApresentationTitle>
+          <BlueText className="display-1">Wellington Calixto</BlueText>
           <h3 className="heading-3-jetbrains">
             Sou um Desenvolvedor Web Front-End
           </h3>
@@ -57,6 +62,11 @@ const Introducao = ({ heightHeader }) => {
       </div>
     </IntroducaoSection>
   );
+};
+
+Introducao.prototype = {
+  heightHeader: PropTypes.number,
+  windowHeight: PropTypes.number,
 };
 
 export default Introducao;

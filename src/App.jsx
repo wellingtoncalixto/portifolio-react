@@ -11,6 +11,7 @@ import HeaderComponent from "./components/header/HeaderComponent";
 function App() {
   const [isMobile, setIsMobile] = React.useState(false);
   const [headerHeight, setHeaderHeight] = React.useState();
+  const [windowHeight, setWindowHeight] = React.useState(window.innerHeight);
 
   React.useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -24,6 +25,7 @@ function App() {
       setIsMobile(true);
     } else setIsMobile(false);
     setHeaderHeight(document.querySelector("header").offsetHeight);
+    setWindowHeight(window.innerHeight);
   }
 
   return (
@@ -31,12 +33,15 @@ function App() {
       <main>
         <GlobalStyle />
         <HeaderComponent isMobile={isMobile} />
-        <Introducao heightHeader={headerHeight && headerHeight} />
-        {/* <Sobre />
-        <Projetos isMobile={isMobile} />
+        <Introducao
+          heightHeader={headerHeight && headerHeight}
+          windowHeight={windowHeight}
+        />
+        <Sobre windowHeight={windowHeight} />
+        {/* <Projetos isMobile={isMobile} />
         <Contato /> */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </Theme>
   );
 }
