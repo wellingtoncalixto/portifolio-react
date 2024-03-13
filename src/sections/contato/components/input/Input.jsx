@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 const Input = (props) => {
   return (
-    <Container>
+    <Container style={props.style}>
       <Label className="label-1" htmlFor={props.id}>
         {props.label}
       </Label>

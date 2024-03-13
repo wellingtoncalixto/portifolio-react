@@ -39,7 +39,7 @@ function App() {
         />
         <Sobre windowHeight={windowHeight} />
         <Projetos isMobile={isMobile} />
-        {/* <Contato /> */}
+        <Contato />
       </main>
       <Footer />
     </Theme>

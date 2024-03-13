@@ -1,12 +1,15 @@
 import React from "react";
 import IconLinkComponent from "../../components/icon-link/IconLinkComponent";
 import {
+  ContactContent,
   ContatoSection,
   Form,
   FormContainer,
   LineDecoration,
   MediasContainer,
+  SubTitle,
   SubmitButton,
+  TitleContainer,
 } from "./style";
 import Input from "./components/input/Input";
 import useForm from "../../custom_hooks/useForm";
@@ -54,28 +57,39 @@ const Contato = () => {
 
   return (
     <ContatoSection id="contact" className="section">
-      <div className="content">
-        <div className="title-container">
+      <ContactContent className="content">
+        <TitleContainer className="title-container">
           <h1 className="heading-1 title">Contato</h1>
-        </div>
-        <div className="message-container">
-          <h2 className="sub-title heading-3-kanit">
-            Se gostou do meu trabalho e quer entrar em contato para uma
-            oportunidade ou apenas para me dar um Oi, você pode me mandar uma
-            mensagem preenchendo os campos abaixo ou entrar em contato pelas
-            minhas redes sociais.
-          </h2>
-        </div>
+        </TitleContainer>
+        <SubTitle className="sub-title heading-3-kanit">
+          Se gostou do meu trabalho e quer entrar em contato para uma
+          oportunidade ou apenas para me dar um Oi, você pode me mandar uma
+          mensagem preenchendo os campos abaixo ou entrar em contato pelas
+          minhas redes sociais.
+        </SubTitle>
         <LineDecoration />
         <FormContainer className="form-container">
           <Form onSubmit={handleSubmit}>
-            <Input label="Nome" id="nome" type="text" {...nome} />
-            <Input label="E-mail" id="email" type="email" {...email} />
+            <Input
+              label="Nome"
+              id="nome"
+              type="text"
+              {...nome}
+              style={{ gridArea: "nome" }}
+            />
+            <Input
+              label="E-mail"
+              id="email"
+              type="email"
+              {...email}
+              style={{ gridArea: "email" }}
+            />
             <TextArea
               label="Mensagem"
               id="mensagem"
               type="text"
               {...mensagem}
+              style={{ gridArea: "mensagem" }}
             />
             <SubmitButton
               disabled={disableButton()}
@@ -114,7 +128,7 @@ const Contato = () => {
             />
           </MediasContainer>
         </FormContainer>
-      </div>
+      </ContactContent>
     </ContatoSection>
   );
 };

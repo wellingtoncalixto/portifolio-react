@@ -185,7 +185,7 @@ const GlobalStyle = createGlobalStyle`
 
     .sub-title {
       text-align: center;
-      margin-top: ${(props) => props.theme.space.global_space_60};
+      margin-top: ${(props) => props.theme.space._60};
       color: ${(props) => props.theme.colors.c4};
       position: relative;
       border-left: 4px solid ${(props) => props.theme.colors.b5};
