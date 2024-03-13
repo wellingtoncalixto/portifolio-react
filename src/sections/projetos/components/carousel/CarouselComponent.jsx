@@ -7,7 +7,7 @@ import { MuiltCarousel, CarouselContainer } from "./style";
 
 const responsive = {
   mobile: {
-    breakpoint: { max: 767, min: 0 },
+    breakpoint: { max: 3000, min: 0 },
     items: 1,
   },
 };

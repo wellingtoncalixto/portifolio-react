@@ -85,8 +85,8 @@ const theme = {
     small_label: "0,015625rem",
   },
   font_weight: {
-    regular: "400",
-    bold: "700",
+    regular: 400,
+    bold: 700,
   },
 };
 

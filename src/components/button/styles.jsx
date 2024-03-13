@@ -9,7 +9,7 @@ const communButtonStyles = ({ theme }) => {
     font-weight: ${theme.font_weight.bold};
     border-radius: ${theme.space._12};
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 700px) {
       padding: ${theme.space._12} ${theme.space._24};
     }
   `;

@@ -139,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
       "projects" 
       "contact" 
       ;
-      grid-template-rows: max-content max-content max-content max-content max-content;
+      grid-template-rows: repeat(5, max-content);
       
     }
 
@@ -162,10 +162,6 @@ const GlobalStyle = createGlobalStyle`
     };
 
     /* Classes Globais */
-    .content {
-      padding: 0 ${({ theme }) => theme.space._24};
-    };
-
     .title-container {
       width: 100%;
       display: flex;
@@ -196,41 +192,46 @@ const GlobalStyle = createGlobalStyle`
       border-right: 4px solid ${(props) => props.theme.colors.b5};
     }
 
-    @media screen and (min-width: 320px) {
+    @media (min-width: 320px) { 
       html {
-          font-size: 12px;    
-      }   
-    }  
-    
-    @media screen and (min-width: 320px) and (min-height: 100px) and (max-height: 320px) {
-      main {
-        grid-template-rows: max-content max-content max-content repeat(2, 100vh);
-      }
-    } 
-
-    @media screen and (min-width: 320px) and (min-height: 321px){
-      main {
-        grid-template-rows: max-content 100vh max-content repeat(2, 100vh);
-      }
-    } 
-
-    @media screen and (min-width:768px) {  
-      main {
-        grid-template-rows: max-content 100vh max-content repeat(2, 100vh);
+        font-size: 12px;
       }
     }
 
-    @media screen and (min-width:992px) and (min-height: 700px) {  
-      html {
-          font-size: 16px;
-        }
+    @media (min-width: 320px) and (min-height: 320px) { 
+      main {
+        grid-template-rows: max-content 100vh repeat(3, max-content);
+      }
     }
 
-    @media screen and (min-width: 1400px) { 
+    @media screen and (min-width: 500px){
+      main {
+        grid-template-rows: repeat(5, max-content);
+      }
+    }
+
+    @media (min-width: 700px)  { 
+      main {
+        grid-template-rows: max-content 100vh repeat(3, max-content);
+      }
+     }
+
+    @media (min-width: 992px) { 
+      html {
+        font-size: 16px;
+      }
+      main {
+        grid-template-rows: max-content 100vh max-content max-content max-content;
+      }
+     }
+
+    @media (min-width: 1200px) and (min-height: 800px)  { 
       main {
         grid-template-rows: max-content repeat(4, 100vh);
       }
+     }
 
+    @media screen and (min-width: 1400px) { 
       .content {
         padding-left: 0px;
         padding-right: 0px;

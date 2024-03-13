@@ -6,11 +6,15 @@ export const AboutSection = styled.section`
   background-color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.space._24};
 
-  @media screen and (min-width: 769px) and (min-height: 450px) and (max-height: 1000px) {
+  @media screen and (min-width: 992px) and (min-height: 450px) and (max-height: 1000px) {
     background-image: url(${aboutPhoto});
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: auto 100%;
+    background-position: left center;
+    background-size: 40% auto;
+  }
+
+  @media screen and (min-width: 1300px) {
+    background-size: auto 100vh;
   }
 `;
 
@@ -22,7 +26,7 @@ export const AboutContent = styled.div`
     "text"
     "button";
 
-  @media screen and (min-width: 769px) and (min-height: 450px) and (max-height: 1000px) {
+  @media screen and (min-width: 992px) and (min-height: 450px) and (max-height: 1000px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "title title"

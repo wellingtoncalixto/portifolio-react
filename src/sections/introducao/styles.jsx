@@ -5,10 +5,11 @@ export const IntroducaoSection = styled.section`
   grid-area: introducao;
   display: flex;
   align-items: center;
+  padding: ${(props) => props.theme.space._24};
   padding-top: calc(
     ${(props) => props.$headerHeight} + 2 * ${(props) => props.theme.space._24}
   );
-  padding-bottom: ${(props) => props.theme.space._24};
+
   & > .content {
     display: flex;
     justify-content: center;
@@ -18,7 +19,7 @@ export const IntroducaoSection = styled.section`
     width: 100%;
   }
 
-  @media screen and (min-width: 769px) and (min-height: 450px) and (max-height: 1000px) {
+  @media screen and (min-width: 992px) and (min-height: 450px) and (max-height: 1000px) {
     background-image: url(${introducaoPhoto});
     background-repeat: no-repeat;
     background-position: right top;
@@ -33,7 +34,7 @@ export const IntroducaoSection = styled.section`
 export const Apresentation = styled.div`
   text-align: center;
 
-  @media screen and (min-width: 769px) and (min-height: 450px) and (max-height: 1000px) {
+  @media screen and (min-width: 992px) and (min-height: 450px) and (max-height: 1000px) {
     margin-top: 0;
     text-align: start;
     width: max-content;

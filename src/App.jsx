@@ -38,8 +38,8 @@ function App() {
           windowHeight={windowHeight}
         />
         <Sobre windowHeight={windowHeight} />
-        {/* <Projetos isMobile={isMobile} />
-        <Contato /> */}
+        <Projetos isMobile={isMobile} />
+        {/* <Contato /> */}
       </main>
       <Footer />
     </Theme>
