@@ -204,9 +204,9 @@ const GlobalStyle = createGlobalStyle`
       }
     }
 
-    @media screen and (min-width: 500px){
+    @media screen and (min-width: 500px) and (min-height: 320px){
       main {
-        grid-template-rows: repeat(5, max-content);
+        grid-template-rows: max-content 100vh repeat(3, max-content);
       }
     }
 
