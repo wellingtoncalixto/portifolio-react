@@ -39,9 +39,9 @@ export const Form = styled.form`
     "email"
     "mensagem"
     "button";
+  gap: 20px;
 
   @media (min-width: 1200px) {
-    gap: 20px;
     grid-template-areas:
       "nome email"
       "mensagem mensagem"
@@ -52,6 +52,7 @@ export const Form = styled.form`
 export const SubmitButton = styled(ButtonComponent)`
   grid-area: button;
   margin: 0 auto;
+  width: 100%;
 `;
 
 export const MediasContainer = styled.div`

@@ -8,24 +8,37 @@ import {
 import PropTypes from "prop-types";
 
 const Input = (props) => {
+  const {
+    id,
+    label,
+    setValue,
+    error,
+    onChange,
+    onBlur,
+    validate,
+    success,
+    disabled,
+    ...rest
+  } = props;
   return (
-    <Container style={props.style}>
-      <Label className="label-1" htmlFor={props.id}>
-        {props.label}
+    <Container success={success}>
+      <Label className="label-1" htmlFor={id}>
+        {label}
       </Label>
       <InputComponent
         type="text"
-        id={props.id}
-        name={props.id}
-        onChange={({ target }) => props.setValue(target.value)}
-        $error={props.error}
-        onBlur={props.onBlur}
+        id={id}
+        name={id}
+        onChange={({ target }) => setValue(target.value)}
+        $error={error}
+        onBlur={onBlur}
+        disabled={disabled}
+        {...rest}
       />
-      {props.error ? (
-        <ErrorMessage className="cta-medium" style={{ display: "block" }}>
-          {props.error}
-        </ErrorMessage>
-      ) : null}
+
+      <ErrorMessage className="cta-medium">
+        {props.error && props.error}
+      </ErrorMessage>
     </Container>
   );
 };
@@ -38,6 +51,8 @@ Input.prototype = {
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   validate: PropTypes.func,
+  success: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 export default Input;

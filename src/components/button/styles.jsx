@@ -25,6 +25,15 @@ const buttonStyles = ({ $buttonStyle, theme }) => {
     &:hover {
       background: linear-gradient(${theme.colors.b8}, ${theme.colors.b7});
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.75;
+
+      &:hover {
+        background: linear-gradient(${theme.colors.b8}, ${theme.colors.b8});
+      }
+    }
   `;
 
   const secondary = css`

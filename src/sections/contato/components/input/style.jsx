@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 `;
@@ -23,12 +22,24 @@ export const Input = styled.input`
   border-radius: 0.625rem;
   font-size: 1.5rem;
   padding: ${(props) => props.theme.space._12};
+
   &:hover,
   &:focus {
     border: ${(props) => props.theme.space._4} solid
       ${(props) => props.theme.colors.b6};
     outline: 0;
   }
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+      border-color: ${(props) => props.theme.colors.c10};
+      outline: 0;
+    }
+  }
+
   ${(props) =>
     props.$error &&
     css`
@@ -43,6 +54,7 @@ export const Input = styled.input`
 `;
 
 export const ErrorMessage = styled.span`
+  height: ${(props) => props.theme.space._16};
   color: #af0404;
   margin: ${(props) => props.theme.space._4} ${(props) => props.theme.space._8};
 `;

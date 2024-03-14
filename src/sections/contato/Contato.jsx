@@ -15,18 +15,22 @@ import Input from "./components/input/Input";
 import useForm from "../../custom_hooks/useForm";
 import TextArea from "./components/textarea/TextArea";
 import useFetch from "../../custom_hooks/useFetch";
+import ToggleMessageComponent from "../../components/toggle-message/ToggleMessageComponent";
 
 const Contato = () => {
   const nome = useForm();
   const email = useForm("email");
   const mensagem = useForm("mensagem");
+  const [toggleVisible, setToggleVisible] = React.useState(false);
+  const [success, setSuccess] = React.useState();
 
-  const { request } = useFetch();
+  const { request, loading } = useFetch();
 
   async function handleSubmit(event) {
     event.preventDefault();
-    await request(
-      "https://formsubmit.co/ajax/bb1d10a093690e50775494d84c89b04a",
+
+    const { response, error } = await request(
+      "https://formsubmit.co/ajax/yusohato@mailgolem.com",
       {
         method: "POST",
         headers: {
@@ -39,9 +43,22 @@ const Contato = () => {
         }),
       }
     );
-    nome.setValue("");
-    email.setValue("");
-    mensagem.setValue("");
+
+    if (!error) {
+      setToggleVisible(true);
+      setSuccess(true);
+      nome.setValue("");
+      email.setValue("");
+      mensagem.setValue("");
+    } else {
+      setToggleVisible(true);
+      setSuccess(false);
+    }
+    setTimeout(() => {
+      setToggleVisible(false);
+    }, 3000);
+
+    console.log(response);
   }
 
   function disableButton() {
@@ -50,7 +67,8 @@ const Contato = () => {
       !email.value ||
       email.error ||
       !mensagem.value ||
-      mensagem.error
+      mensagem.error ||
+      loading
       ? true
       : false;
   }
@@ -74,28 +92,31 @@ const Contato = () => {
               label="Nome"
               id="nome"
               type="text"
-              {...nome}
               style={{ gridArea: "nome" }}
+              disabled={loading ? true : false}
+              {...nome}
             />
             <Input
               label="E-mail"
               id="email"
               type="email"
-              {...email}
               style={{ gridArea: "email" }}
+              disabled={loading ? true : false}
+              {...email}
             />
             <TextArea
               label="Mensagem"
               id="mensagem"
               type="text"
-              {...mensagem}
               style={{ gridArea: "mensagem" }}
+              disabled={loading ? true : false}
+              {...mensagem}
             />
             <SubmitButton
               disabled={disableButton()}
               className="cta-medium"
               buttonType={"normalButton"}
-              text={"Enviar"}
+              text={loading ? "Enviando..." : "Enviar"}
               type="submit"
               buttonStyle={"primary"}
             />
@@ -129,6 +150,7 @@ const Contato = () => {
           </MediasContainer>
         </FormContainer>
       </ContactContent>
+      {toggleVisible && <ToggleMessageComponent success={success} />}
     </ContatoSection>
   );
 };
